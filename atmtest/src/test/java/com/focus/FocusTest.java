@@ -42,9 +42,8 @@ public class FocusTest extends WebDriverBase implements Browser, FocusPage {
 
     @Parameters({ "location", "locationTwo", "locationThree", "title", "titleTwo" })
     @Test(priority = 4)
-    public void selectTabLocation(String location, String locationTwo, String locationThree, String title, String titleTwo) throws InterruptedException{
+    public void selectTabLocation(String location, String locationTwo, String locationThree, String title, String titleTwo){
         selectLocation(driver, location, locationTwo, locationThree, title, titleTwo);
-        Thread.sleep(10000);
     }
 
     @AfterClass(alwaysRun = true)

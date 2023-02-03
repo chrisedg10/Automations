@@ -12,7 +12,7 @@
     <parameter name="locationTwo" value="central-america" />
     <parameter name="locationThree" value="asia" />
     <parameter name="title" value="El Salvador" />
-    <parameter name="titleTwo" value="Bacolod" />
+    <parameter name="titleTwo" value="Bacolod City, Philippines" />
     <classes>
       <class name="com.focus.FocusTest" />
     </classes>
