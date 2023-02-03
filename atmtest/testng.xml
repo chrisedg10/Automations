@@ -7,6 +7,12 @@
     <parameter name="browser" value="Chrome" />
     <parameter name="URL" value="https://www.google.com" />
     <parameter name="searchText" value="https://www.focusservices.com/" />
+    <parameter name="tab" value="locations" />
+    <parameter name="location" value="north-america" />
+    <parameter name="locationTwo" value="central-america" />
+    <parameter name="locationThree" value="asia" />
+    <parameter name="title" value="El Salvador" />
+    <parameter name="titleTwo" value="Bacolod" />
     <classes>
       <class name="com.focus.FocusTest" />
     </classes>

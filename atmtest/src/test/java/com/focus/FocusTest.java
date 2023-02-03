@@ -6,8 +6,9 @@ import org.testng.annotations.*;
 
 import com.focus.Constants.WebDriverBase;
 import com.focus.Functions.Browser;
+import com.focus.Functions.FocusPage;
 
-public class FocusTest extends WebDriverBase implements Browser {
+public class FocusTest extends WebDriverBase implements Browser, FocusPage {
     @Parameters({ "browser", "URL" })
     @BeforeClass(alwaysRun = true)
     public void setUp(String browser, String URL) throws Exception {
@@ -31,6 +32,19 @@ public class FocusTest extends WebDriverBase implements Browser {
     @Test(priority = 2)
     public void focusLandingPage(){
         apply(driver);
+    }
+
+    @Parameters({ "tab" })
+    @Test(priority = 3)
+    public void selectTabOption(String tab){
+        selectTab(driver, tab);
+    }
+
+    @Parameters({ "location", "locationTwo", "locationThree", "title", "titleTwo" })
+    @Test(priority = 4)
+    public void selectTabLocation(String location, String locationTwo, String locationThree, String title, String titleTwo) throws InterruptedException{
+        selectLocation(driver, location, locationTwo, locationThree, title, titleTwo);
+        Thread.sleep(10000);
     }
 
     @AfterClass(alwaysRun = true)
