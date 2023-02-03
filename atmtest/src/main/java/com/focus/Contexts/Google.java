@@ -1,4 +1,6 @@
-package focus.Contexts;
+package com.focus.Contexts;
+
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,4 +20,12 @@ public class Google {
     public WebElement searchButton(){
         return driver.findElement(By.className("gNO89b"));
     }
+
+    public List<WebElement> results(){
+        List<WebElement> results = driver.findElements(By.tagName("a"));
+
+        return results;
+    }
+
+
 }

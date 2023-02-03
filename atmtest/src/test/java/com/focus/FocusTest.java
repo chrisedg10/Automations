@@ -1,13 +1,13 @@
-package focus.testing;
+package com.focus;
 
-import static org.testng.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.testng.annotations.*;
 
-import focus.Constants.WebDriverBase;
-import focus.Functions.Browser;
+import com.focus.Constants.WebDriverBase;
+import com.focus.Functions.Browser;
 
-public class test extends WebDriverBase implements Browser {
+public class FocusTest extends WebDriverBase implements Browser {
     @Parameters({ "browser", "URL" })
     @BeforeClass(alwaysRun = true)
     public void setUp(String browser, String URL) throws Exception {
@@ -16,10 +16,21 @@ public class test extends WebDriverBase implements Browser {
         driver.manage().deleteAllCookies();
     }
 
-    @Parameters({ "search" })
+    @Parameters({ "searchText" })
     @Test(priority = 0)
-    public void searchInBrowser(String search) throws Exception {
-        search(driver, search);
+    public void newSearch(String searchText){
+        search(driver, searchText);
+    }
+
+    @Parameters({ "searchText" })
+    @Test(priority = 1)
+    public void seeResults(String searchText){
+        evaluateResults(driver, searchText);
+    }
+
+    @Test(priority = 2)
+    public void focusLandingPage(){
+        apply(driver);
     }
 
     @AfterClass(alwaysRun = true)
